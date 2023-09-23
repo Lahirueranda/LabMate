@@ -21,6 +21,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'lab_id',
+        'nic',
+        'course_name',
+        'university_program',
+        'degree_name',
+        'faculty_name',
+        'role'
     ];
 
     /**
@@ -42,4 +49,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+
+public function isAdmin()
+{
+    return $this->role == 'admin';
+}
+
+
+public function bookings()
+{
+    return $this->hasMany(Booking::class);
+}
+
+public function lab()
+{
+    return $this->belongsTo(Lab::class);
+}
+
 }
