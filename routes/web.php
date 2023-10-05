@@ -6,6 +6,8 @@ use App\Http\Controllers\ProfileController;
 >>>>>>> Stashed changes
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +18,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('//', [AuthController::class, 'showLoginForm'])->name('home');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+Route::get('/register_admin', [AuthController::class, 'register_admin'])->name('register_admin');
+Route::post('/register_admin', [AuthController::class, 'add_admin_register']);
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,3 +50,5 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 >>>>>>> Stashed changes
+
+
