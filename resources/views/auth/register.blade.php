@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('Section')
@@ -213,3 +214,4 @@
     @section('title')
     <title>Dashbord 3 | Log in (v2)</title>
     @endsection
+

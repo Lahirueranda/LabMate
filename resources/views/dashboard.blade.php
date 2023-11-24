@@ -217,3 +217,4 @@
 @section('title')
 <title>Dashbord 3 | Log in (v2)</title>
 @endsection
+

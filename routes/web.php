@@ -1,9 +1,6 @@
 <?php
 
-<<<<<<< Updated upstream
-=======
 use App\Http\Controllers\ProfileController;
->>>>>>> Stashed changes
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
@@ -35,8 +32,7 @@ Route::post('/register_admin', [AuthController::class, 'add_admin_register']);
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< Updated upstream
-=======
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -49,6 +45,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
->>>>>>> Stashed changes
-
-
